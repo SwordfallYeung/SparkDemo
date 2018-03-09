@@ -1,4 +1,4 @@
-#Spark简要知识：<br/>
+# Spark简要知识：
 spark程序：App<br/>
 用于提交应用程序的：Driver<br/>
 资源管理：Master<br/>
@@ -29,7 +29,7 @@ rdd.count<br/>
 rdd.map(_.split("\t")).map(x => (x(1), 1)).reduceByKey( _ + _ ).collect 
 rdd.unpersist(true) 释放内存<br/>
 
-##Checkpoint
+# Checkpoint
 ①没有缓存 <br/>
 sc.setCheckpointDir("hdfs://node-1.itcast.cn:9000/ck20160519")<br/>
 val rdd = textFile("hdfs://node-1.itcast.cn:9000/itcast")<br/>
@@ -42,3 +42,5 @@ val rdd2 = rdd.map(_ .split("\t")).map(x => (x(1), 1)).reduceByKey(_ + _)<br/>
 rdd2.cache()<br/>
 rdd2.checkpoint<br/>
 rdd2.collect<br/>
+
+# RDD的依赖关系
