@@ -7,10 +7,12 @@ import org.apache.spark.{SparkConf, SparkContext}
   * @create 2018-03-05 0:59
   * @desc
   **/
-object WordCount {
+object SubmitWordCount {
   def main(args: Array[String]): Unit = {
     //非常重要，是通向Spark集群的入口
     val conf = new SparkConf().setAppName("WC")
+      .setJars(Array("C:\\HelloSpark\\target\\hello-spark-1.0.jar"))
+      .setMaster("spark://node-1.itcast.cn:7077") //远程提交并debug
     val sc = new SparkContext(conf)
 
     //textFile会产生两个RDD 1.HadoopRDD -> MapPartitionRDD
