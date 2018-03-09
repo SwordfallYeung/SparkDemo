@@ -19,7 +19,7 @@ object WordCount {
       .flatMap(_.split(" "))
       //产生一个RDD：MapPartitionRDD
       .map((_,1))
-      //产生一个RDD：ShuffleRDD
+      //产生一个RDD：ShuffleRDD 下游从上游拉取数据
       .reduceByKey(_+_).sortBy(_._2,false)
       //产生一个RDD：ShuffleRDD
       .saveAsTextFile(args(1))
