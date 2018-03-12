@@ -87,6 +87,13 @@ personDF.select("id","name").save("hdfs://node-1.itcast.cn:9000/out000) //保存
 加载在hdfs上以json格式保存的数据：<br/>
 val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载就是DataFrame格式
 
+# Flume与spark streaming结合
+ flume与spark streaming结合实例参考/src/main/scala/cn/itcast/spark/day5/FlumePushWordCount.scala <br/>
+ 先启动FlumePushWordCount示例，在启动flume <br/>
+ 使用命令启动flume：bin/flume-ng agent -n a1 -c conf -f conf/flume-push.conf <br/>
+ flume-push.conf的配置可参考/src/main/files/flume/flume-push.conf <br/>
+ 
+
 
 
 
