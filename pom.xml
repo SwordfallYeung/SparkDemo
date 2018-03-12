@@ -59,6 +59,7 @@
       <artifactId>spark-streaming-flume_2.11</artifactId>
       <version>1.6.1</version>
     </dependency>
+
   </dependencies>
 
   <build>

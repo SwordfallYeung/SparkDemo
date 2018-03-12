@@ -88,12 +88,18 @@ personDF.select("id","name").save("hdfs://node-1.itcast.cn:9000/out000) //保存
 val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载就是DataFrame格式
 
 # Flume与spark streaming结合
+* ①flume主动推送数据到spark<br/>
  flume与spark streaming结合实例参考/src/main/scala/cn/itcast/spark/day5/FlumePushWordCount.scala <br/>
- 先启动FlumePushWordCount示例，在启动flume <br/>
+ 先启动FlumePushWordCount示例，再启动flume <br/>
  使用命令启动flume：bin/flume-ng agent -n a1 -c conf -f conf/flume-push.conf <br/>
  flume-push.conf的配置可参考/src/main/files/flume/flume-push.conf <br/>
- 
 
+* ②flume被动拉取数据到spark，即spark主动从flume拉取数据<br/>
+  实例参考/src/main/scala/cn/itcast/spark/day5/FlumePollWordCount.scala <br/>
+  先启动flume，再启动FlumePushWordCount示例 <br/>
+  使用命令启动flume：bin/flume-ng agent -n a1 -c conf -f conf/flume-poll.conf <br/>
+  flume-push.conf的配置可参考/src/main/files/flume/flume-poll.conf <br/>
+  flume安装目录lib需要三个jar包：spark-streaming-flume-sink_2.10-1.6.1.jar、commons-lang3-3.5.jar、scala-library-2.10.5.jar
 
 
 
