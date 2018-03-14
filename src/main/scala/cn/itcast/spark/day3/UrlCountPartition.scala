@@ -31,11 +31,12 @@ object UrlCountPartition {
     })*/
 
     //缓存
+    //cache会将数据缓存到内存当中，cache是一个transformation ,延迟执行 ，缓存提高性能
     val rdd3 = rdd2.map(t => {
       val url = t._1
       val host = new URL(url).getHost
       (host, (url, t._2))
-    }).cache() //cache会将数据缓存到内存当中，cache是一个transformation ,延迟执行 ，缓存提高性能
+    }).cache()
 
     val ints = rdd3.map(_._1).distinct().collect() //distinct去重
 
