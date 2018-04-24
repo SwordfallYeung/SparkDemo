@@ -1,3 +1,4 @@
+/*
 package cn.itcast.spark.day5
 
 import java.net.InetSocketAddress
@@ -27,3 +28,4 @@ object FlumePollWordCount {
     ssc.awaitTermination()
   }
 }
+*/

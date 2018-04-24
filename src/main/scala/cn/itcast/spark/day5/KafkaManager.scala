@@ -1,3 +1,4 @@
+/*
 package cn.itcast.spark.day5
 
 import kafka.common.TopicAndPartition
@@ -131,3 +132,4 @@ class KafkaManager(val kafkaParams: Map[String, String]) extends Serializable {
     }
   }
 }
+*/
