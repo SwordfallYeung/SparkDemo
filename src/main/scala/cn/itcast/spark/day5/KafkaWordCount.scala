@@ -1,4 +1,3 @@
-/*
 package cn.itcast.spark.day5
 
 import org.apache.spark.{HashPartitioner, SparkConf}
@@ -41,4 +40,4 @@ object KafkaWordCount {
     ssc.awaitTermination()
   }
 }
-*/
+

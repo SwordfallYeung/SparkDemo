@@ -1,4 +1,4 @@
-/*
+
 package cn.itcast.spark.day5
 
 import org.apache.spark.SparkConf
@@ -25,4 +25,4 @@ object FlumePushWordCount {
     ssc.awaitTermination()
   }
 }
-*/
+
