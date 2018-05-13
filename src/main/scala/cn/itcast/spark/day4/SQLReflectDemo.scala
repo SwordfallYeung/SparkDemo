@@ -1,6 +1,6 @@
 package cn.itcast.spark.day4
 
-import org.apache.spark.sql.SQLContext
+import org.apache.spark.sql.{SQLContext, SparkSession}
 import org.apache.spark.{SparkConf, SparkContext}
 
 /**
@@ -14,10 +14,14 @@ object SQLDemo {
     //本地运行
     val conf = new SparkConf().setAppName("SQLDemo").setMaster("local[2]")
     //val conf = new SparkConf().setAppName("SQLDemo") 要打包到spark集群上运行则不需要后面的setMaster("local[2]")
+
     //SQLContext要依赖SparkContext
     val sc = new SparkContext(conf)
-    //创建SQLContext
-    val sqlContext = new SQLContext(sc)
+    //创建SQLContext spark1.6.1以下的写法
+    //val sqlContext = new SQLContext(sc)
+
+    //spark2.0 以上的写法
+    val sqlContext = SparkSession.builder().config(conf).getOrCreate()
 
     //提交到spark集群上运行，需要设置用户，否则无权限执行，本地运行则无需
     //System.setProperty("user.name", "bigdata")
@@ -36,7 +40,8 @@ object SQLDemo {
     val personDf = personRdd.toDF()
 
     //采用SQL编写风格 注册表
-    personDf.registerTempTable("person")
+    //personDf.registerTempTable("person") spark 1.6.1以下的写法
+    personDf.createOrReplaceTempView("person")
 
     sqlContext.sql("select * from person where age >= 20 order by age desc limit 2").show()
   }
