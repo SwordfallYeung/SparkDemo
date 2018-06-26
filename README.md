@@ -102,4 +102,8 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
   flume安装目录lib需要三个jar包：spark-streaming-flume-sink_2.10-1.6.1.jar、commons-lang3-3.5.jar、scala-library-2.10.5.jar
 
 
+# Spark读取Mongodb中的数据，报错“java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.”
+spark在windows下运行依赖于hadoop环境<br/>
+参考资料：https://www.cnblogs.com/hyl8218/p/5492450.html
+
 
