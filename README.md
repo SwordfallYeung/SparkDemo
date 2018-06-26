@@ -110,3 +110,6 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
 # Spark2.2.0版本 spark rdd离线读取DataSource
 读取Mongodb数据库里面的数据代码示例：<br/>
 >DataSet<Row> ds = MongoSpark.load(sparkContext).toDF()
+ df.createOrReplaceTempView("hello");
+ Dataset<Row> helloDs = sparkSession.sql("SELECT name, age, sex FROM hello");
+ helloDs.show();
