@@ -119,3 +119,6 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
  
  # Spark 二次分组 groupby
  参考资料：https://blog.csdn.net/wangpei1949/article/details/66474029
+ 
+ # Spark Java版map(f)注释
+ xxx.map(new Function<Tuple2<x,y>, Object>(){}) 中Tuple2<x,y>为输入参数，Object为输出参数
