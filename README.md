@@ -131,11 +131,11 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
 
 # Spark JavaAPI map如何返回元组
 例子：
->filterRDD.map(new Function<String, Tuple2<String, Integer>>() {
-            @Override
-            public Tuple2<String, Integer> call(String v1) throws Exception {
-                    return new Tuple2<String, Integer>(v1, 1);
-            }
-        });
+>filterRDD.map(new Function<String, Tuple2<String, Integer>>() { <br/>
+            @Override <br/>
+            public Tuple2<String, Integer> call(String v1) throws Exception {<br/>
+                    return new Tuple2<String, Integer>(v1, 1);<br/>
+            }<br/>
+        });<br/>
         
 参考资料：https://blog.csdn.net/m0_37636453/article/details/78965992
