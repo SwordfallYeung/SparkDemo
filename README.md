@@ -125,3 +125,6 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
  
  # Spark JavaAPI算子aggregate、aggregateByKey的用法
  参考资料：https://www.jianshu.com/p/6825914cc26f
+ 
+ # Spark 笛卡尔积算子概念及用法
+ 参考资料：https://www.cnblogs.com/MOBIN/p/5373256.html
