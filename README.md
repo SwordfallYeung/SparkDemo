@@ -113,3 +113,6 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
  df.createOrReplaceTempView("hello");<br/>
  Dataset<Row> helloDs = sparkSession.sql("SELECT name, age, sex FROM hello");<br/>
  helloDs.show();
+ 
+ # Spark 算子学习 keyBy
+ 参考资料： http://blog.cheyo.net/180.html
