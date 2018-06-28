@@ -109,6 +109,8 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
 > Dataset<Row> df = MongoSpark.load(jsc).withPipeline().toDF();<br/> 
 withPipeline()里面写的是mongodb的sql语法 <br/>
 如withPipeline(Collections.singletonList(Document.parse(String.format("{ $match : { uptime : { $gte : %d, $lt : %d } } }", 1530180515003 / 1000, 1530180528228 / 1000))))<br/>
+Mongodb学习资料：https://www.cnblogs.com/KnowEditByW/p/8082051.html
+ 
 
 # Spark2.2.0版本 spark rdd离线读取DataSource
 读取Mongodb数据库里面的数据代码示例：<br/>
@@ -122,6 +124,9 @@ withPipeline()里面写的是mongodb的sql语法 <br/>
  
  # Spark 二次分组 groupby
  参考资料：https://blog.csdn.net/wangpei1949/article/details/66474029
+ 
+ # Spark 先用keyBy分配对象key，再用groupByKey 根据对象key分组
+ 这里问题比较严重，不能完成分组，一般对象与对象之间都是不同的，所以程序无法根据对象分组
  
  # Spark Java版map(f)注释
  xxx.map(new Function<Tuple2<x,y>, Object>(){}) 中Tuple2<x,y>为输入参数，Object为输出参数
