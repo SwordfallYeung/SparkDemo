@@ -106,6 +106,9 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
 错误描述是：“java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.”<br/>
 错误原因为：spark在windows下运行依赖于hadoop环境<br/>
 参考资料：https://www.cnblogs.com/hyl8218/p/5492450.html
+> Dataset<Row> df = MongoSpark.load(jsc).withPipeline().toDF();<br/> 
+withPipeline()里面写的是mongodb的sql语法 <br/>
+如withPipeline(Collections.singletonList(Document.parse(String.format("{ $match : { uptime : { $gte : %d, $lt : %d } } }", 1530180515003 / 1000, 1530180528228 / 1000))))<br/>
 
 # Spark2.2.0版本 spark rdd离线读取DataSource
 读取Mongodb数据库里面的数据代码示例：<br/>
