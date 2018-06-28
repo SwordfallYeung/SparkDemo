@@ -148,3 +148,6 @@ scala版本中没有mapToPair，直接用map就可以实现，java需要通过ma
 # Spark reduceByKey与groupByKey算子运用
 参考资料：https://www.2cto.com/net/201704/623475.html
 参考资料：https://blog.csdn.net/fanzitao/article/details/51223046
+
+# Spark JAVAAPI sortBy算子运用
+
