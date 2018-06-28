@@ -139,3 +139,7 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
         });<br/>
         
 参考资料：https://blog.csdn.net/m0_37636453/article/details/78965992
+
+# Spark JavaAPI mapToPair键值对创建 
+scala版本中没有mapToPair，直接用map就可以实现，java需要通过mapToPair实现
+参考资料：https://blog.csdn.net/t1dmzks/article/details/70234272
