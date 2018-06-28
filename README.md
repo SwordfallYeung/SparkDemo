@@ -124,6 +124,7 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
  xxx.map(new Function<Tuple2<x,y>, Object>(){}) 中Tuple2<x,y>为输入参数，Object为输出参数
  
  # Spark JavaAPI算子aggregate、aggregateByKey的用法
+ aggregate是把rdd里面的所有元素聚合的，而aggregateByKey是根据key分组再组内聚合的<br/>
  参考资料：https://www.jianshu.com/p/6825914cc26f
  
  # Spark 笛卡尔积算子概念及用法
