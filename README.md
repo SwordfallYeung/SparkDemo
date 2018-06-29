@@ -158,5 +158,5 @@ scala版参考资料：https://www.2cto.com/net/201704/623475.html <br/>
 java版参考资料：https://blog.csdn.net/fanzitao/article/details/51223046<br/>
 java和python版参考资料：https://www.cnblogs.com/LgyBean/p/6262481.html
 
-# Spark JavaAPI sortBy算子运用
-参考资料：
+# Spark JavaAPI 算子运用
+参考资料：https://www.cnblogs.com/itboys/p/6674132.html
