@@ -14,7 +14,13 @@ object JdbcDFDemo {
   def main(args: Array[String]): Unit = {
     val conf = new SparkConf().setAppName("MysqlDemo").setMaster("local[2]")
     val sc = new SparkContext(conf)
-    val sqlContext = new SQLContext(sc)
+       
+    //创建SQLContext spark1.6.1以下的写法
+    //val sqlContext = new SQLContext(sc)
+
+    //spark2.0 以上的写法
+    val sqlContext = SparkSession.builder().config(conf).getOrCreate()
+   
     //通过并行化创建RDD
     val personRDD = sc.parallelize(Array("1 tom 5", "2 jerry 3", "3 kitty 6")).map(_.split(" "))
     //通过StructType直接指定每个字段的schema
