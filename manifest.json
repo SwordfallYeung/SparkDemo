@@ -11,7 +11,7 @@
   ],
   "content_scripts": [  
    {  
-      "matches": ["https://pan.baidu.com/*"], 
+      "matches": ["https://pan.baidu.com/disk/home?#/all?path=%2F&vmode=list"], 
       "js": ["百度网盘直链下载插件2018年4月5日临时版.user.js"]  
    }  
   ]  
