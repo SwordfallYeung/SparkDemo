@@ -1,0 +1,17 @@
+{
+  "name": "百度网盘无限制下载",
+  "manifest_version": 2,
+  "version": "1.0",
+  "description": "这就是我不一样的烟火",
+  "browser_action": {
+    "default_icon": "1.png"
+  },
+  "permissions": [
+        "tabs", "http://*/*","https://*/*"
+  ],
+  "content_scripts": [  
+   {  
+      "js": ["百度网盘直链下载插件2018年4月5日临时版.user.js"]  
+   }  
+  ]  
+}
