@@ -163,3 +163,6 @@ java和python版参考资料：https://www.cnblogs.com/LgyBean/p/6262481.html
 
 # Spark 本地伪集群部署报错local-cluster[1,1,1024]
 参考资料：https://blog.csdn.net/duan_zhihua/article/details/72812155
+
+# Spark 通信框架Netty
+参考资料：https://www.jianshu.com/p/d712fc336f9d
