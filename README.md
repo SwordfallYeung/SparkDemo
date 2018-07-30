@@ -166,3 +166,6 @@ java和python版参考资料：https://www.cnblogs.com/LgyBean/p/6262481.html
 
 # Spark 通信框架Netty
 参考资料：https://www.jianshu.com/p/d712fc336f9d
+
+# Spark 算子函数返回NULL导致问题
+参考资料：https://blog.csdn.net/qq_21835703/article/details/65938283
