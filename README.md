@@ -169,3 +169,6 @@ java和python版参考资料：https://www.cnblogs.com/LgyBean/p/6262481.html
 
 # Spark 算子函数返回NULL导致问题
 参考资料：https://blog.csdn.net/qq_21835703/article/details/65938283
+
+# Spark SQL 两表关联查询
+参考资料：https://blog.csdn.net/haohaixingyun/article/details/52778830
