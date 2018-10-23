@@ -178,10 +178,10 @@ scala版:<br/>
 https://blog.csdn.net/coding_hello/article/details/75211995<br/>
 java版:<br/>
 >Encoder<ImsiRecord> ImsiRecordEncoder = Encoders.bean(ImsiRecord.class);<br/>
-			imsiRdd1 = imsiRecordDataset.map(new MapFunction<ImsiRecord, ImsiRecord>() {<br/>
-				@Override<br/>
-				public ImsiRecord call(ImsiRecord value) throws Exception {<br/>
-					value.setIsp(Utils.getISP(value.getImsi()));<br/>
-					return value;<br/>
-				}<br/>
-			}, ImsiRecordEncoder);
+ imsiRdd1 = imsiRecordDataset.map(new MapFunction<ImsiRecord, ImsiRecord>() {<br/>
+	    @Override<br/>
+            public ImsiRecord call(ImsiRecord value) throws Exception {<br/>
+		 value.setIsp(Utils.getISP(value.getImsi()));<br/>
+		 return value;<br/>
+	    }<br/>
+	 }, ImsiRecordEncoder);
