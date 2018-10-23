@@ -17,7 +17,7 @@ rdd.dependencies是一个shuffleDependency
       .setJars(Array("C:\\HelloSpark\\target\\hello-spark-1.0.jar"))<br/>
       .setMaster("spark://node-1.itcast.cn:7077")<br/>
       
-## RDD缓存
+### RDD缓存
 ①没有采用缓存机制<br/>
 val rdd = sc.textFile("hdfs://node-1.itcast.cn:9000/itcast")<br/>
 rdd.count<br/>
@@ -29,7 +29,7 @@ rdd.count<br/>
 rdd.map(_.split("\t")).map(x => (x(1), 1)).reduceByKey( _ + _ ).collect 
 rdd.unpersist(true) 释放内存<br/>
 
-# Checkpoint
+### Checkpoint
 ①没有缓存 <br/>
 sc.setCheckpointDir("hdfs://node-1.itcast.cn:9000/ck20160519")<br/>
 val rdd = textFile("hdfs://node-1.itcast.cn:9000/itcast")<br/>
@@ -43,10 +43,10 @@ rdd2.cache()<br/>
 rdd2.checkpoint<br/>
 rdd2.collect<br/>
 
-# Spark提交任务的流程
+### Spark提交任务的流程
 RDD Objects =>DAGScheduler =>TaskScheduler =>Worker
 
-# RDD的依赖关系
+### RDD的依赖关系
 RDD和它依赖的父RDD(s)的关系有两种不同的类型，即窄依赖和宽依赖:<br/>
 * 窄依赖指的是每一个父RDD的Partition最多被子RDD的一个Partition使用<br/>
   总结：窄依赖我们形象的比喻为独生子女<br/>
@@ -54,7 +54,7 @@ RDD和它依赖的父RDD(s)的关系有两种不同的类型，即窄依赖和�
   总结：宽依赖我们形象的比喻为超生<br/>
 Spark的state依赖划分是根据窄依赖和宽依赖的<br/>
 
-# DataFrames 结构化流，类似数据库表
+### DataFrames 结构化流，类似数据库表
 DataFrames与RDD区别：DataFrame多了数据的结构信息，即schema，Spark可以清楚地知道该数据集中包含哪些列、每列的名称和类型各是什么，DataFrame是分布式的Row对象的集合。RDD是分布式的 Java对象的集合，从而导致spark框架不了解该Java对象的内部结构。
 
 DataSet与RDD区别：DataSet的数据是以编码的二进制形式被存储，不需要反序列化就可以执行sorting、shuffle等操作。DataSet创建需要一个显式的Encoder，把对象序列化为二进制，可以把对象的scheme映射为SparkSQL类型，然而RDD依赖于运行时反射机制。
@@ -87,7 +87,7 @@ personDF.select("id","name").save("hdfs://node-1.itcast.cn:9000/out000) //保存
 加载在hdfs上以json格式保存的数据：<br/>
 val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载就是DataFrame格式
 
-# Flume与spark streaming结合
+### Flume与spark streaming结合
 * flume主动推送数据到spark<br/>
  flume与spark streaming结合实例参考/src/main/scala/cn/itcast/spark/day5/FlumePushWordCount.scala <br/>
  先启动FlumePushWordCount示例，再启动flume <br/>
@@ -102,7 +102,7 @@ val df = sqlContext.load("hdfs://node-1.itcast.cn:9000/json","json")  //加载�
   flume安装目录lib需要三个jar包：spark-streaming-flume-sink_2.10-1.6.1.jar、commons-lang3-3.5.jar、scala-library-2.10.5.jar
 
 
-# Spark读取Mongodb中的数据，报错
+### Spark读取Mongodb中的数据，报错
 错误描述是：“java.io.IOException: Could not locate executable null\bin\winutils.exe in the Hadoop binaries.”<br/>
 错误原因为：spark在windows下运行依赖于hadoop环境<br/>
 参考资料：https://www.cnblogs.com/hyl8218/p/5492450.html
@@ -112,33 +112,33 @@ withPipeline()里面写的是mongodb的sql语法 <br/>
 Mongodb学习资料：https://www.cnblogs.com/KnowEditByW/p/8082051.html
  
 
-# Spark2.2.0版本 spark rdd离线读取DataSource
+### Spark2.2.0版本 spark rdd离线读取DataSource
 读取Mongodb数据库里面的数据代码示例：<br/>
 >DataSet<Row> ds = MongoSpark.load(sparkContext).toDF(); <br/>
  df.createOrReplaceTempView("hello");<br/>
  Dataset<Row> helloDs = sparkSession.sql("SELECT name, age, sex FROM hello");<br/>
  helloDs.show();
  
- # Spark 算子学习 keyBy
+ ### Spark 算子学习 keyBy
  参考资料： http://blog.cheyo.net/180.html
  
- # Spark 二次分组 groupby
+ ### Spark 二次分组 groupby
  参考资料：https://blog.csdn.net/wangpei1949/article/details/66474029
  
- # Spark 先用keyBy分配对象key，再用groupByKey 根据对象key分组
+ ### Spark 先用keyBy分配对象key，再用groupByKey 根据对象key分组
  这里问题比较严重，不能完成分组，一般对象与对象之间都是不同的，所以程序无法根据对象分组
  
- # Spark Java版map(f)注释
+ ### Spark Java版map(f)注释
  xxx.map(new Function<Tuple2<x,y>, Object>(){}) 中Tuple2<x,y>为输入参数，Object为输出参数
  
- # Spark JavaAPI算子aggregate、aggregateByKey的用法
+ ### Spark JavaAPI算子aggregate、aggregateByKey的用法
  aggregate是把rdd里面的所有元素聚合的，而aggregateByKey是根据key分组再组内聚合的<br/>
  参考资料：https://www.jianshu.com/p/6825914cc26f
  
- # Spark 笛卡尔积算子概念及用法
+ ### Spark 笛卡尔积算子概念及用法
  参考资料：https://www.cnblogs.com/MOBIN/p/5373256.html
 
-# Spark JavaAPI map如何返回元组
+### Spark JavaAPI map如何返回元组
 例子：
 >filterRDD.map(new Function<String, Tuple2<String, Integer>>() { <br/>
             @Override <br/>
@@ -149,26 +149,39 @@ Mongodb学习资料：https://www.cnblogs.com/KnowEditByW/p/8082051.html
         
 参考资料：https://blog.csdn.net/m0_37636453/article/details/78965992
 
-# Spark JavaAPI mapToPair键值对创建 
+### Spark JavaAPI mapToPair键值对创建 
 scala版本中没有mapToPair，直接用map就可以实现，java需要通过mapToPair实现
 参考资料：https://blog.csdn.net/t1dmzks/article/details/70234272
 
-# Spark reduceByKey与groupByKey算子运用
+### Spark reduceByKey与groupByKey算子运用
 scala版参考资料：https://www.2cto.com/net/201704/623475.html <br/>
 java版参考资料：https://blog.csdn.net/fanzitao/article/details/51223046<br/>
 java和python版参考资料：https://www.cnblogs.com/LgyBean/p/6262481.html
 
-# Spark JavaAPI 算子运用 注意里面的flatMap算子运用
+### Spark JavaAPI 算子运用 注意里面的flatMap算子运用
 参考资料：https://www.cnblogs.com/itboys/p/6674132.html
 
-# Spark 本地伪集群部署报错local-cluster[1,1,1024]
+### Spark 本地伪集群部署报错local-cluster[1,1,1024]
 参考资料：https://blog.csdn.net/duan_zhihua/article/details/72812155
 
-# Spark 通信框架Netty
+### Spark 通信框架Netty
 参考资料：https://www.jianshu.com/p/d712fc336f9d
 
-# Spark 算子函数返回NULL导致问题
+### Spark 算子函数返回NULL导致问题
 参考资料：https://blog.csdn.net/qq_21835703/article/details/65938283
 
-# Spark SQL 两表关联查询
+### Spark SQL 两表关联查询
 参考资料：https://blog.csdn.net/haohaixingyun/article/details/52778830
+
+### Spark DataSet Scala操作与Java操作
+scala版:<br/>
+https://blog.csdn.net/coding_hello/article/details/75211995<br/>
+java版:<br/>
+>Encoder<ImsiRecord> ImsiRecordEncoder = Encoders.bean(ImsiRecord.class);<br/>
+			imsiRdd1 = imsiRecordDataset.map(new MapFunction<ImsiRecord, ImsiRecord>() {<br/>
+				@Override<br/>
+				public ImsiRecord call(ImsiRecord value) throws Exception {<br/>
+					value.setIsp(Utils.getISP(value.getImsi()));<br/>
+					return value;<br/>
+				}<br/>
+			}, ImsiRecordEncoder);
