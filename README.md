@@ -185,3 +185,7 @@ java版:<br/>
 		 return value;<br/>
 	    }<br/>
 	 }, ImsiRecordEncoder);
+
+### spark性能优化
+https://blog.csdn.net/lsshlsw/article/details/49155087<br/>
+https://www.cnblogs.com/haozhengfei/p/052d52fab3885adf74cbfcff05739e90.html<br/>
