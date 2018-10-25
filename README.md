@@ -189,3 +189,4 @@ java版:<br/>
 ### spark性能优化
 https://blog.csdn.net/lsshlsw/article/details/49155087<br/>
 https://www.cnblogs.com/haozhengfei/p/052d52fab3885adf74cbfcff05739e90.html<br/>
+https://www.jianshu.com/p/a0c38dc46b89<br/>
