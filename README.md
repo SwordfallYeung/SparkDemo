@@ -194,3 +194,6 @@ https://www.cnblogs.com/liangjf/p/8322410.html<br/>
 https://blog.csdn.net/leen0304/article/details/78732171<br/>
 
 https://github.com/endymecy/spark-config-and-tuning/blob/master/spark-tuning.md<br/>
+
+### SPARK-SQL内置函数之时间日期类
+https://blog.csdn.net/u014589856/article/details/80347917
