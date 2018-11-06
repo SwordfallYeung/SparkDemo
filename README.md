@@ -202,4 +202,5 @@ https://blog.csdn.net/u014589856/article/details/80347917
 https://www.cnblogs.com/suanec/p/7560399.html
 
 ### Spark SQL tutorials
-http://allaboutscala.com/big-data/spark/#stackoverflow-dataset
+http://allaboutscala.com/big-data/spark/#stackoverflow-dataset<br/>
+https://docs.databricks.com/getting-started/spark/datasets.html
