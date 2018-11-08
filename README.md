@@ -204,3 +204,6 @@ https://www.cnblogs.com/suanec/p/7560399.html
 ### Spark SQL tutorials
 http://allaboutscala.com/big-data/spark/#stackoverflow-dataset<br/>
 https://docs.databricks.com/getting-started/spark/datasets.html
+
+### Spark可能遇到的坑
+https://www.jianshu.com/p/a0c38dc46b89
