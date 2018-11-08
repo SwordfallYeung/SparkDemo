@@ -207,3 +207,9 @@ https://docs.databricks.com/getting-started/spark/datasets.html
 
 ### Spark可能遇到的坑
 https://www.jianshu.com/p/a0c38dc46b89
+
+### Spark cluster full of heartbeat timeouts, executors exiting on their own
+https://stackoverflow.com/questions/37260230/spark-cluster-full-of-heartbeat-timeouts-executors-exiting-on-their-own<br/>
+
+### Relation between heartbeatInterval and network timeout
+https://issues.apache.org/jira/browse/SPARK-17449
