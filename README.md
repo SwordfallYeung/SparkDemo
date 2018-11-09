@@ -192,6 +192,7 @@ https://www.cnblogs.com/haozhengfei/p/052d52fab3885adf74cbfcff05739e90.html<br/>
 https://www.jianshu.com/p/a0c38dc46b89<br/>
 https://www.cnblogs.com/liangjf/p/8322410.html<br/>
 https://blog.csdn.net/leen0304/article/details/78732171<br/>
+https://www.jianshu.com/p/850edc1d11f0
 
 https://github.com/endymecy/spark-config-and-tuning/blob/master/spark-tuning.md<br/>
 
